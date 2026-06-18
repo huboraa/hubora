@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ========================================
+     HEAD SECTION
+     This is where we set up the page settings
+     The user won't see this part directly
+======================================== -->
+<head>
+  <!-- Tells the browser this is HTML5 -->
+  <meta charset="UTF-8">
+  
+  <!-- Makes the website look good on mobile phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- The title that appears on the browser tab -->
+  <title>Hubora — Create · Connect · Elevate</title>
+
+  <!-- Google Fonts — loads our elegant fonts from the internet -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ========================================
+       CSS SECTION
+       This is where we control how everything LOOKS
+       colors, fonts, sizes, spacing
+  ======================================== -->
+  <style>
+
+    /* This resets default browser styles so everything looks consistent */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BODY — the entire page background and default font */
+    body {
+      background-color: #1a1614; /* Dark charcoal — from your logo */
+      color: #f5f0ea;            /* Warm white — easy to read */
+      font-family: 'Inter', sans-serif; /* Clean modern font */
+    }
+
+    /* ---- NAVIGATION BAR ---- */
+    nav {
+      display: flex;                  /* Puts items side by side */
+      justify-content: space-between; /* Spreads them left and right */
+      align-items: center;            /* Vertically centers them */
+      padding: 20px 60px;             /* Space inside the nav */
+      border-bottom: 1px solid rgba(201,169,122,0.2); /* Faint gold line */
+    }
+
+    /* The HUBORA text in the navbar */
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 5px;  /* Spreads letters apart — luxury feel */
+      color: #c9a97a;        /* Gold color */
+    }
+
+    /* The nav links (About, Brands, Contact) */
+    .nav-links {
+      display: flex;
+      gap: 32px; /* Space between each link */
+      list-style: none; /* Removes bullet points */
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase; /* Makes text ALL CAPS */
+      color: rgba(245,240,234,0.6); /* Slightly transparent white */
+      text-decoration: none;        /* Removes underline */
+    }
+
+    /* When you hover over a nav link, it turns gold */
+    .nav-links a:hover {
+      color: #c9a97a;
+    }
+
+    /* The Explore button in the navbar */
+    .nav-btn {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border: 1px solid #c9a97a; /* Gold border */
+      color: #c9a97a;
+      background: transparent;   /* See-through background */
+      cursor: pointer;           /* Shows hand cursor on hover */
+    }
+
+    .nav-btn:hover {
+      background: #c9a97a;
+      color: #1a1614;
+    }
+
+    /* ---- HERO SECTION (the big top area) ---- */
+    .hero {
+      text-align: center;
+      padding: 100px 40px 80px;
+      border-bottom: 1px solid rgba(201,169,122,0.15);
+    }
+
+    /* Small label above the main title */
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #c9a97a;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* Main big title HUBORA */
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;       /* Thin weight looks luxurious */
+      letter-spacing: 8px;
+      color: #f5f0ea;
+      margin-bottom: 12px;
+    }
+
+    /* The Create · Connect · Elevate line */
+    .hero-tagline {
+      font-size: 12px;
+      letter-spacing: 6px;
+      color: #c9a97a;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    /* The thin gold line under the tagline */
+    .gold-line {
+      width: 60px;
+      height: 1px;
+      background: #c9a97a;
+      margin: 0 auto 32px; /* Centers it horizontally */
+    }
+
+    /* The paragraph description */
+    .hero p {
+      font-size: 15px;
+      color: rgba(245,240,234,0.55);
+      max-width: 500px;
+      margin: 0 auto 48px;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* The two buttons side by side */
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Gold filled button */
+    .btn-primary {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      background: #c9a97a;
+      color: #1a1614;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      background: #b8935f;
+    }
+
+    /* Outlined button */
+    .btn-secondary {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      background: transparent;
+      color: #c9a97a;
+      border: 1px solid #c9a97a;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(201,169,122,0.1);
+    }
+
+    /* ---- BRANDS SECTION ---- */
+    .section {
+      padding: 80px 60px;
+      border-bottom: 1px solid rgba(201,169,122,0.15);
+    }
+
+    /* Small label above section title */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #c9a97a;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      text-align: center;
+      color: #f5f0ea;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      text-align: center;
+      font-size: 14px;
+      color: rgba(245,240,234,0.45);
+      margin-bottom: 50px;
+      font-weight: 300;
+    }
+
+    /* Grid layout for brand cards */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+      gap: 20px;
+    }
+
+    /* Each brand card */
+    .brand-card {
+      background: rgba(201,169,122,0.05);
+      border: 1px solid rgba(201,169,122,0.2);
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease; /* Smooth hover animation */
+    }
+
+    .brand-card:hover {
+      border-color: #c9a97a;
+      background: rgba(201,169,122,0.1);
+      transform: translateY(-4px); /* Lifts up on hover */
+    }
+
+    /* Circle icon area on each card */
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,169,122,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 22px;
+    }
+
+    .brand-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #f5f0ea;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .brand-card p {
+      font-size: 13px;
+      color: rgba(245,240,234,0.45);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    /* The Live/Coming Soon badge */
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border: 1px solid #c9a97a;
+      color: #c9a97a;
+    }
+
+    .badge.soon {
+      border-color: rgba(245,240,234,0.2);
+      color: rgba(245,240,234,0.3);
+    }
+
+    /* ---- VALUES SECTION ---- */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,169,122,0.15);
+    }
+
+    .value-item {
+      background: #1a1614;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .value-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .value-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #f5f0ea;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .value-item p {
+      font-size: 13px;
+      color: rgba(245,240,234,0.45);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      padding: 40px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 5px;
+      color: #c9a97a;
+    }
+
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: rgba(201,169,122,0.4);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: rgba(245,240,234,0.25);
+    }
+
+  </style>
+</head>
+
+<!-- ========================================
+     BODY SECTION
+     Everything the user SEES goes here
+======================================== -->
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <div class="logo">HUBORA</div>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Our Brands</a></li>
+      <li><a href="#">Journal</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="nav-btn">Explore</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <p class="hero-tag">A House of Brands</p>
+    <h1>HUBORA</h1>
+    <p class="hero-tagline">Create &nbsp;·&nbsp; Connect &nbsp;·&nbsp; Elevate</p>
+    <div class="gold-line"></div>
+    <p>A curated family of brands built to inspire creativity, craftsmanship, and meaningful living — across digital, handmade, fashion, and education.</p>
+    <div class="hero-btns">
+      <button class="btn-primary">Explore Our Brands</button>
+      <button class="btn-secondary">Our Story</button>
+    </div>
+  </section>
+
+  <!-- BRANDS SECTION -->
+  <section class="section">
+    <p class="section-label">Our Portfolio</p>
+    <h2>Brands Under Hubora</h2>
+    <p class="section-desc">Each brand carries its own identity, united by a shared commitment to quality.</p>
+
+    <div class="brand-grid">
+
+      <!-- Brand Card 1 — Pageloom -->
+      <div class="brand-card">
+        <div class="card-icon">🖥️</div>
+        <h3>Pageloom</h3>
+        <p>Digital templates marketplace for creators and businesses</p>
+        <span class="badge">Live Now</span>
+      </div>
+
+      <!-- Brand Card 2 — Crochet -->
+      <div class="brand-card">
+        <div class="card-icon">🧶</div>
+        <h3>Crochet Brand</h3>
+        <p>Handcrafted crochet pieces made with artisan care</p>
+        <span class="badge soon">Coming Soon</span>
+      </div>
+
+      <!-- Brand Card 3 — Cloth -->
+      <div class="brand-card">
+        <div class="card-icon">👗</div>
+        <h3>Cloth Brand</h3>
+        <p>Thoughtfully designed apparel and fashion pieces</p>
+        <span class="badge soon">Coming Soon</span>
+      </div>
+
+      <!-- Brand Card 4 — Science -->
+      <div class="brand-card">
+        <div class="card-icon">🔬</div>
+        <h3>Science Education</h3>
+        <p>Engaging science content for curious young minds</p>
+        <span class="badge soon">Coming Soon</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="section">
+    <p class="section-label">Our Values</p>
+    <h2>What Drives Us</h2>
+    <p class="section-desc">The principles behind every brand we build.</p>
+
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-icon">✨</div>
+        <h4>Create</h4>
+        <p>Turning ideas into products that serve and inspire people around the world</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🔗</div>
+        <h4>Connect</h4>
+        <p>Building bridges between makers, learners, and buyers everywhere</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">📈</div>
+        <h4>Elevate</h4>
+        <p>Raising the standard of quality in everything we create and offer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">HUBORA</div>
+      <p class="footer-tagline">Create · Connect · Elevate</p>
+    </div>
+    <p>© 2026 Hubora. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
